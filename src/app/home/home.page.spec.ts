@@ -1,18 +1,20 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+/** @format */
 
-import { HomePage } from './home.page';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-describe('HomePage', () => {
-  let component: HomePage;
-  let fixture: ComponentFixture<HomePage>;
+import { HomePage } from "./home.page";
 
-  beforeEach(async () => {
-    fixture = TestBed.createComponent(HomePage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+describe("HomePage", () => {
+	let component: HomePage;
+	let fixture: ComponentFixture<HomePage>;
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	beforeEach(async () => {
+		fixture = TestBed.createComponent(HomePage);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
+
+	it("should create", () => {
+		expect(component).toBeTruthy();
+	});
 });
