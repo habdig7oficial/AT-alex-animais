@@ -3,6 +3,7 @@
 import { NgFor, NgIf } from "@angular/common";
 import { Component } from "@angular/core";
 import { IonicModule } from "@ionic/angular";
+import { } from "@angular/animations"
 
 import { animal_obj, animais, respostas, perguntas } from "./animais";
 
@@ -12,6 +13,12 @@ import { animal_obj, animais, respostas, perguntas } from "./animais";
 	styleUrls: ["home.page.scss"],
 	standalone: true,
 	imports: [IonicModule, NgFor, NgIf],
+  animations: [
+      transition(':leave', [
+        animate('100ms', style({ opacity: 0 }))
+      ])
+    ]),
+  ]
 })
 export class HomePage {
 	debug = true;
@@ -28,3 +35,4 @@ export class HomePage {
 		console.log(respostas);
 	}
 }
+
