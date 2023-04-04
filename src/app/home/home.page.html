@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      IA adivinhação
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <main *ngIf="start == false"> 
+
+    <p class="ion-text-center">Escolha entre os animais abaixo</p>
+
+    <ion-list interface="popover" placeholder="Escolha entre os animais abaixo">
+      <ion-item class="ion-margin" *ngFor="let animal of animals; index as i">
+        <ion-grid>
+          <ion-col>
+            <img alt="Opção {{ i }}; Foto de um(a) {{ animal.animal }}" src="{{ animal.photo }}" >
+            <p class="ion-text-center">{{ animal.animal }}</p>
+          </ion-col>
+        </ion-grid>
+      </ion-item>
+  
+    </ion-list>
+  
+    <p class="ion-margin ion-text-justify"> Agora responda as perguntas de <span class="bold">Sim</span> ou <span class="bold">Não</span>, que adivinharemos o seu animal escolhido </p>
+    <ion-button (click)="start=true" class="ion-margin ion-justify-conten-center" expand="block">Começar</ion-button>  
+  </main>
+
+  <div *ngIf="start == true">
+    <h4 class="ion-margin ion-text-center"> {{ perguntas[j] != undefined? j + 1: "" }} - {{ perguntas[j] }}</h4>
+    <ion-grid>
+      <ion-row class="ion-justify-content-center ion-margin">
+        <ion-button (click)="StoreANS(true); j=j+1" color="success">Sim</ion-button>
+        <div class="ion-margin"></div>
+        <ion-button (click)="StoreANS(false); j=j+1;" color="danger">Não</ion-button>
+      </ion-row>
+    
+      <div *ngIf="respostas[j] != undefined">
+
+      </div>
+      
+    </ion-grid>
+  </div>
+
+  <div *ngIf="debug == true">
+    {{ animals }}--
+    {{ start }}--
+    {{ perguntas }}
+  </div>
+
+
+</ion-content>

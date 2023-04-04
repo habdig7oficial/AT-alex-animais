@@ -1,0 +1,7 @@
+{
+  "name": "adivinhar-animais",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
