@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-	<main *ngIf="start == false">
+	<main @Exit *ngIf="start == false">
 		<p class="ion-text-center">Escolha entre os animais abaixo</p>
 
 		<ion-list class="ion-justify-content-center" interface="popover" placeholder="Escolha entre os animais abaixo">
@@ -32,7 +32,7 @@
 		>
 	</main>
 
-	<div *ngIf="start == true">
+	<div @Ans *ngIf="start == true">
 		<h4 class="ion-margin ion-text-center">
 			{{ perguntas[j] != undefined? j + 1: "" }} - {{ perguntas[j] }}
 		</h4>

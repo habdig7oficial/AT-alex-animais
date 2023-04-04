@@ -33,7 +33,7 @@ export let animais = [
 		link: "https://brasilescola.uol.com.br/animais/urso-pardo.htm",
 	},
 	{
-		name: "pinguin",
+		name: "pinguim",
 		photo: "https://cdn.pixabay.com/photo/2019/12/17/17/31/donkey-penguin-4702115_1280.jpg",
 		link: "https://brasilescola.uol.com.br/animais/pinguins.htm",
 	},
