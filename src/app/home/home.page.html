@@ -10,15 +10,12 @@
 	<main *ngIf="start == false">
 		<p class="ion-text-center">Escolha entre os animais abaixo</p>
 
-		<ion-list interface="popover" placeholder="Escolha entre os animais abaixo">
+		<ion-list class="ion-justify-content-center" interface="popover" placeholder="Escolha entre os animais abaixo">
 			<ion-item class="ion-margin" *ngFor="let animal of animals; index as i">
 				<ion-grid>
 					<ion-col>
-						<a [href]="animal.link">
-							<img
-								alt="Opção {{ i }}; Foto de um(a) {{ animal.name }}"
-								src="{{ animal.photo }}"
-							/>
+						<a target="_blank" [href]="animal.link">
+							<img alt="Opção {{ i }}; Foto de um(a) {{ animal.name }}" src="{{ animal.photo }}" />
 							<p class="ion-text-center">{{ animal.name }}</p>
 						</a>
 					</ion-col>
@@ -27,13 +24,10 @@
 		</ion-list>
 
 		<p class="ion-margin ion-text-justify">
-			Agora responda as perguntas de <span class="bold">Sim</span> ou
-			<span class="bold">Não</span>, que adivinharemos o seu animal escolhido
+			Agora responda as perguntas de <span class="bold">Sim</span> ou <span class="bold">Não</span>,
+			que adivinharemos o seu animal escolhido
 		</p>
-		<ion-button
-			(click)="start=true"
-			class="ion-margin ion-justify-conten-center"
-			expand="block"
+		<ion-button (click)="start=true" class="ion-margin ion-justify-conten-center" expand="block"
 			>Começar</ion-button
 		>
 	</main>
@@ -44,13 +38,9 @@
 		</h4>
 		<ion-grid>
 			<ion-row class="ion-justify-content-center ion-margin">
-				<ion-button (click)="StoreANS(true); j=j+1" color="success"
-					>Sim</ion-button
-				>
+				<ion-button (click)="StoreANS(true); j=j+1" color="success">Sim</ion-button>
 				<div class="ion-margin"></div>
-				<ion-button (click)="StoreANS(false); j=j+1;" color="danger"
-					>Não</ion-button
-				>
+				<ion-button (click)="StoreANS(false); j=j+1;" color="danger">Não</ion-button>
 			</ion-row>
 		</ion-grid>
 	</div>
