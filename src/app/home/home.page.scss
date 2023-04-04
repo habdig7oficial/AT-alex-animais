@@ -33,7 +33,7 @@ img {
 	border-radius: 0.5rem;
 }
 
-a{
+a {
 	color: #fff;
 	text-decoration: none;
 }
@@ -42,15 +42,15 @@ a{
 	font-weight: bold;
 }
 
-.disaper{
+.disaper {
 	animation: change 2s;
 }
 
 @keyframes change {
-	from{
+	from {
 		height: 100%;
 	}
-	to{
+	to {
 		height: 0%;
 	}
 }

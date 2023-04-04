@@ -6,6 +6,19 @@ export interface animal_obj {
 	link: string;
 }
 
+/*
+export interface int_perguntas{
+  pergunta?: string,
+
+  Snext?: int_perguntas,
+  Nnext?: int_perguntas,
+
+  asn?: boolean,
+}
+*/
+
+export type arr_perguntas = [string, arr_perguntas?, arr_perguntas?];
+
 export let animais = [
 	{
 		name: "papagaio",
@@ -44,6 +57,12 @@ export let animais = [
 	},
 ];
 
-export let perguntas: Array<string> = ["O seu animal é legal"];
+export let prototype: Array<string> = [];
+
+export let perguntas: arr_perguntas = [
+	"pergunta",
+	["pergunta2", ["pergunta4"], ["pergunta6"]],
+	["pergunta3", ["pergunta5"], ["pergunta7"]],
+];
 
 export let respostas: Array<boolean> = [];
