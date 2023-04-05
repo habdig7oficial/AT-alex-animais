@@ -3,7 +3,7 @@
 import { NgFor, NgIf } from "@angular/common";
 import { Component } from "@angular/core";
 import { IonicModule } from "@ionic/angular";
-import { trigger, transition, animate, style } from "@angular/animations";
+import { trigger, transition, animate, style, state } from "@angular/animations";
 
 import { animal_obj, animais, respostas, arr_perguntas, perguntas } from "./animais";
 
@@ -23,20 +23,25 @@ import { animal_obj, animais, respostas, arr_perguntas, perguntas } from "./anim
 			transition(":enter", [style({ opacity: 0 }), animate("1s 0.9s", style({ opacity: 1 }))]),
 			transition(":leave", [animate("1s", style({ transform: "translateY(-100%)" }))]),
 		]),
+
+		trigger("TextChange", [
+			transition("* => *", [style({ opacity: 0 }), animate("0.8s", style({ opacity: 1 }))]),
+		]),
 	],
 })
 export class HomePage {
-	debug = true;
+	debug = false;
 
 	animals = animais;
 	start: boolean = false;
-	//perguntas: int_perguntas = perguntas;
 
 	j: number = 0;
 
 	perguntas: arr_perguntas = perguntas;
 
 	p_atual? = this.perguntas;
+
+	adivinhado?: string;
 
 	constructor() {}
 
@@ -51,7 +56,11 @@ export class HomePage {
 		} else if (ans == false && this.p_atual) {
 			this.p_atual = this.p_atual[2];
 		}
-		if (this.p_atual == undefined) {
+		if (this.p_atual && this.p_atual[0].match(/g[O seu animal é]/)) {
+			this.adivinhado = this.p_atual[0];
+			console.log(`Adivinhado: ${this.p_atual[0]}`);
+			this.p_atual = [`end`];
+		} else if (this.p_atual == undefined) {
 			this.p_atual = [`end`];
 		}
 		this.p_atual[0];

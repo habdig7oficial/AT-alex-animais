@@ -60,9 +60,8 @@ export let animais = [
 export let prototype: Array<string> = [];
 
 export let perguntas: arr_perguntas = [
-	"pergunta",
-	["pergunta2", ["pergunta4"], ["pergunta6"]],
-	["pergunta3", ["pergunta5"], ["pergunta7"]],
+	"O seu animal tem penas?",
+	["O seu animal pode voar?", ["O seu animal é um papagaio."]],
 ];
 
 export let respostas: Array<boolean> = [];
