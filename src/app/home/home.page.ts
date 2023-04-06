@@ -43,6 +43,8 @@ export class HomePage {
 
 	adivinhado?: string;
 
+	img_obj? = new Map<string, string>();
+
 	constructor() {}
 
 	StoreANS(ans: boolean) {
@@ -56,13 +58,20 @@ export class HomePage {
 		} else if (ans == false && this.p_atual) {
 			this.p_atual = this.p_atual[2];
 		}
-		if (
-			this.p_atual &&
-			this.p_atual[0].match("Resposta") 
-		) {
+		if (this.p_atual && this.p_atual[0].match("Resposta")) {
 			this.adivinhado = this.p_atual[0];
-			console.log(`Adivinhado: ${this.p_atual[0]}`);
-      console.log(`match`)
+
+			for (let i = 0; i < animais.length; i++) {
+				if (this.adivinhado.match(animais[i].name)) {
+					this.img_obj?.set("src", animais[i].photo);
+					this.img_obj?.set("alt", animais[i].name);
+					this.img_obj?.set("link", animais[i].link);
+					break;
+
+					//this.img_obj?.img = `ddd`
+				}
+			}
+
 			this.p_atual = [`end`];
 		} else if (this.p_atual == undefined) {
 			this.p_atual = [`end`];

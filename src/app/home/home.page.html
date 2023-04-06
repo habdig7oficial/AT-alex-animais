@@ -49,8 +49,11 @@
 		</ion-grid>
 	</div>
 
-	<div *ngIf="adivinhado != undefined">
-		<h3 @Ans class="ion-text-center">{{ adivinhado }}</h3>
+	<div @Ans *ngIf="adivinhado != undefined">
+		<a [href]="img_obj?.get('link')">
+			<img [src]="img_obj?.get('src')" [alt]="img_obj?.get('alt')" />
+			<h3 class="ion-text-center">{{ adivinhado }}</h3>
+		</a>
 	</div>
 
 	<div *ngIf="debug == true">{{ perguntas }} -- {{ p_atual }}</div>

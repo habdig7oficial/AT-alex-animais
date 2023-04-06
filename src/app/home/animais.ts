@@ -61,7 +61,11 @@ export let prototype: Array<string> = [];
 
 export let perguntas: arr_perguntas = [
 	"O seu animal tem penas?",
-	["O seu animal pode voar?", ["Resposta: O seu animal é um papagaio."], ["Resposta: O seu animal é um pinguim."]],
+	[
+		"O seu animal pode voar?",
+		["Resposta: O seu animal é um papagaio."],
+		["Resposta: O seu animal é um pinguim."],
+	],
 	[
 		"O seu animal é um mamífero?",
 		[
