@@ -56,9 +56,13 @@ export class HomePage {
 		} else if (ans == false && this.p_atual) {
 			this.p_atual = this.p_atual[2];
 		}
-		if (this.p_atual && this.p_atual[0].match(/g[O seu animal é]/)) {
+		if (
+			this.p_atual &&
+			this.p_atual[0].match("Resposta") 
+		) {
 			this.adivinhado = this.p_atual[0];
 			console.log(`Adivinhado: ${this.p_atual[0]}`);
+      console.log(`match`)
 			this.p_atual = [`end`];
 		} else if (this.p_atual == undefined) {
 			this.p_atual = [`end`];

@@ -61,7 +61,24 @@ export let prototype: Array<string> = [];
 
 export let perguntas: arr_perguntas = [
 	"O seu animal tem penas?",
-	["O seu animal pode voar?", ["O seu animal é um papagaio."]],
+	["O seu animal pode voar?", ["Resposta: O seu animal é um papagaio."], ["Resposta: O seu animal é um pinguim."]],
+	[
+		"O seu animal é um mamífero?",
+		[
+			"O seu animal é doméstico?",
+			["Resposta: O seu animal é um gato."],
+			[
+				"O seu animal vive em ambientes de clima frio?",
+				["Resposta: O seu animal é um urso."],
+				[
+					"O seu animal tem manchas sobre o corpo?",
+					["Resposta: O seu animal é uma girafa."],
+					["Resposta: O seu animal é um gnu."],
+				],
+			],
+		],
+		["Resposta: O seu animal é um crocodilo."],
+	],
 ];
 
 export let respostas: Array<boolean> = [];
