@@ -51,7 +51,12 @@
 		<ion-button (click)="start=true;" class="ion-margin ion-justify-conten-center cobrirbotao" expand="block"
 			>Começar</ion-button
 		>
+
 	</main>
+
+	<ion-button class="ion-margin ion-justify-conten-center cobrirbotao reiniciar" expand="block" color="none"
+	>Reniciar</ion-button
+>
 
 	<div @Ans *ngIf="start == true && p_atual && p_atual[0] != 'end'">
 		<h4 [@TextChange]="p_atual[0]" class="ion-margin ion-text-center">
@@ -74,5 +79,7 @@
 	</div>
 
 	<div *ngIf="debug == true">{{ perguntas }} -- {{ p_atual }}</div>
+
+	
 
 </ion-content>
