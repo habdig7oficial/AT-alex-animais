@@ -26,3 +26,16 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+.reset-spc{
+    position: fixed;
+    height: 50px;
+    width: 90%;
+    margin-top: 190%;
+}
+
+.cores{
+    color: #FFFFFF !important;
+    background-color: #218828 !important;
+    border-radius: 15px;
+}
